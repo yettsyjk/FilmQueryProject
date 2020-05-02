@@ -1,3 +1,20 @@
+SELECT language.id, language.name 
+FROM language
+WHERE id = 6
+;
+
+
+SELECT language.name
+FROM language
+JOIN film
+ON film.language_id = language.id
+WHERE film.id = 6 
+;
+
+SELECT film.language_id FROM film;
+SELECT language.id FROM language;
+
+
 SELECT * 
 FROM film
 JOIN film_actor 

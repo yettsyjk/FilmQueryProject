@@ -10,6 +10,7 @@ import java.util.List;
 
 import com.skilldistillery.filmquery.entities.Actor;
 import com.skilldistillery.filmquery.entities.Film;
+import com.skilldistillery.filmquery.entities.Language;
 
 public class DatabaseAccessorObject implements DatabaseAccessor {
 //this class is to find the data from where I tell it to look at. 
@@ -23,6 +24,7 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 			Class.forName("com.mysql.jdbc.Driver");
 
 		} catch (ClassNotFoundException e) {
+			System.err.println("Unable to load database, Bye!!");
 			e.printStackTrace();
 		}
 	}
@@ -154,6 +156,42 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 			e.printStackTrace();
 		}
 		return actors;
+	}
+	@Override
+	public Language findLanguagesByFilmLanguageId(int filmLangId) {
+		Language language = null;
+		String user = "student";
+		String pWord = "student";
+		try {
+			String sql ="SELECT language.id, language.name \n" + 
+					"FROM language\n" + 
+					"WHERE id = ?\n" + 
+					";";
+			Connection conn = DriverManager.getConnection(URL, user, pWord);
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			stmt.setInt(1,  filmLangId);
+			ResultSet searchLang = stmt.executeQuery();
+			while(searchLang.next()) {
+				int id = searchLang.getInt("langauge.id");
+				String name = searchLang.getString("language.name");
+				language = new Language(name, id);
+			}
+			searchLang.close();
+			stmt.close();
+			conn.close();
+			
+		}catch(SQLException e) {
+			System.err.println(e.getMessage() + "FilmLanguage requires attention");
+		} catch (NullPointerException e) {
+			return null;
+		}
+		return language;
+	}
+
+	@Override
+	public ArrayList<Film> findFilmsByKeyWord(String keyword) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

@@ -1,6 +1,20 @@
 ## Overview
+- Skill Distillery Java Code Remote Course
+- Software Developer Yettsy Jo Knapp, Denver, CO.
 - Film Query command line application that retrieves and displays film data.
 - It is menu-based, allowing the user to choose and submit query data.
+
+## Technologies Used:
+1. Java 8
+1. mySQL
+1. JDBC library via java.sql
+1. Maven pom.xml file and SQL Driver
+
+## Lessons Learned
+1. After OCA Exam Prep week, coming back to use my IDE had a bit of an epiphany moment regarding classes and object-oriented programming.
+1. Introduced to JDBC API
+1. PreparedStatments
+1. mySQL commands
 
 ## User Story1
 - The user is presented with a menu in which they can choose to:
