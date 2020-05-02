@@ -1,7 +1,5 @@
 package com.skilldistillery.filmquery.entities;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.util.List;
 
 public class Actor {
@@ -9,30 +7,40 @@ public class Actor {
 	private String firstName;
 	private String lastName;
 	private List<Film> films;
+
+	// getters and setters
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getFirstName() {
 		return firstName;
 	}
+
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
+
 	public String getLastName() {
 		return lastName;
 	}
+
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+
 	public List<Film> getFilms() {
 		return films;
 	}
+
 	public void setFilms(List<Film> films) {
 		this.films = films;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -43,6 +51,7 @@ public class Actor {
 		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -71,12 +80,14 @@ public class Actor {
 			return false;
 		return true;
 	}
+
 	@Override
 	public String toString() {
-		return "Actor [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", films=" + films + "]";
+		return "Actor [ID = " + id + ", first_Name = " + firstName + ", last_Name = " + lastName + ", films = " + films
+				+ " ]";
 	}
-	//constructors are last
- public Actor() {
-	 
- }
+
+	// constructors are last, no-args constructor
+	public Actor() {
+	}
 }
