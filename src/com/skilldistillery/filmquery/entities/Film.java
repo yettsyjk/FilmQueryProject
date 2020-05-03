@@ -4,30 +4,42 @@ import java.util.List;
 
 public class Film {
 	private String title, description, specialFeatures, rating;
-	private int id, releaseYear, languageId, rental_duration, length;
+	private int id, releaseYear, languageId, rental_duration, length, actorId;
 	private double rentalRate, replacementCost;
 	/*
 	 * Modify your Film class to include a List of actors for the film's cast. 
 	 */
 	private List<Actor> actorsInFilm;
 	
-
+	private Language language;
+	
+	public Language getLanguage() {
+		return language;
+	}
+	public void setLanguage(Language language) {
+		this.language = language;
+	}
+	
+	
 	public Film() {
 	}
 
 	public Film(String title, String description, String rating, String special_features, int id, int release_year,
-			int language_id, int rental_duration, int length, double rental_rate, double replacement_cost,
+			int language_id, int rental_duration, int length, int actor_id, double rental_rate, double replacement_cost,
 			List<Actor> actorsInFilm) {
 		super();
-		this.title = title;
-		this.description = description;
-		this.rating = rating;
-		this.specialFeatures = special_features;
-		this.id = id;
-		this.releaseYear = release_year;
-		this.languageId = language_id;
-		this.rentalRate = rental_rate;
-		this.rental_duration = rental_duration;
+		this.title = title;//
+		this.description = description;//
+		
+		
+		this.id = id;//
+		this.releaseYear = release_year;//
+		this.languageId = language_id;//
+		this.rental_duration = rental_duration;//
+		this.rentalRate = rental_rate;//
+		this.rating = rating;//
+		this.specialFeatures = special_features;//
+		this.actorId = actor_id;
 		this.length = length;
 		this.replacementCost = replacement_cost;
 

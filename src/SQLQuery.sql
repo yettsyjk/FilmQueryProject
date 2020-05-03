@@ -1,3 +1,17 @@
+
+SELECT * FROM film limit 10;
+
+SELECT film.title
+FROM film
+WHERE title LIKE '%ACADEMY%'
+OR description LIKE '%Epic%'
+;
+
+
+
+
+
+
 SELECT language.id, language.name 
 FROM language
 WHERE id = 6
