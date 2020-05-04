@@ -1,3 +1,30 @@
+SELECT *  FROM film WHERE title LIKE 
+'%ACADEMY%' OR description 
+LIKE '%epic%'
+;
+SELECT *  FROM film WHERE title LIKE 
+'%ACADEMY%' OR description 
+LIKE '%epic%'
+;
+
+
+SELECT id, title, description, release_year, rating,
+film.id, film.language_id 
+FROM film limit 2;
+
+
+SELECT *  FROM actor JOIN film_actor ON actor.id = film_actor.actor_id WHERE film_id = 4;
+
+
+
+SELECT * 
+FROM actor
+JOIN film_actor
+ON actor.id = film_actor.actor_id
+WHERE film_id = 4
+;
+
+
 
 SELECT * FROM film limit 10;
 

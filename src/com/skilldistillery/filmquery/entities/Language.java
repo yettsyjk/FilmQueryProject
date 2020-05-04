@@ -7,6 +7,19 @@ public class Language {
 	private String filmLanguage;
 	private String name;
 	private int id;
+	
+	
+	public Language(String name, int id) {
+		super();
+		this.name = name;
+		this.id = id;
+	
+	}
+	
+	public void add(Language langugae) {
+	}
+	
+	
 	public String getFilmLanguage() {
 		return filmLanguage;
 	}
@@ -59,20 +72,12 @@ public class Language {
 	}
 	@Override
 	public String toString() {
-		return "Language [filmLanguage=" + filmLanguage + ", name=" + name + ", id=" + id + "]";
+		return name;
 	}
 	
 	
 	
-	public Language(String name, int id) {
-		super();
-		this.name = name;
-		this.id = id;
-		this.filmLanguage = filmLanguage;
-	}
 	
-	public void add(Language langugae) {
-	}
 	
 	
 	

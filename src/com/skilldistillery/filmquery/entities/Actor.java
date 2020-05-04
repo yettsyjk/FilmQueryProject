@@ -8,6 +8,8 @@ public class Actor {
 	private String lastName;
 	private List<Film> films;
 
+	
+
 	// getters and setters
 	public int getId() {
 		return id;
@@ -83,11 +85,18 @@ public class Actor {
 
 	@Override
 	public String toString() {
-		return "Actor [ID = " + id + ", first_Name = " + firstName + ", last_Name = " + lastName + ", films = " + films
-				+ " ]";
+		return  firstName + " " + lastName ;
 	}
 
 	// constructors are last, no-args constructor
 	public Actor() {
 	}
+	
+	public Actor(int actorId, String firstName, String lastName) {
+		super();
+		this.id = actorId;
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
 }
+	
